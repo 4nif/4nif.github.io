@@ -1,0 +1,29 @@
+# _config.yml
+title: Your Blog Title
+description: Your blog description
+theme: minima
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://yourusername.github.io" # Replace yourusername with your GitHub username
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Navigation
+header_pages:
+  - about.md
+  - categories.md
+
+collections:
+  category:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: category
+    values:
+      layout: category
