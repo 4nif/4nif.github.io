@@ -13,10 +13,7 @@ $brand-color: #2a7ae2;
 $grey-color: #828282;
 $grey-color-light: #e8e8e8;
 $grey-color-dark: #424242;
-$table-text-align: left;
 $content-width: 800px;
-$on-palm: 600px;
-$on-laptop: 800px;
 
 // Base styles
 body {
@@ -25,96 +22,98 @@ body {
   background-color: $background-color;
   margin: 0;
   padding: 0;
-  line-height: $base-line-height;
 }
 
-// Links
-a {
-  color: $brand-color;
-  text-decoration: none;
-  
-  &:hover {
-    color: color.adjust($brand-color, $lightness: -10%);
-    text-decoration: underline;
-  }
+// Layout
+.wrapper {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
 }
 
 // Header
 .site-header {
   border-bottom: 1px solid $grey-color-light;
-  min-height: 56px;
-  position: relative;
-  
-  .wrapper {
-    max-width: $content-width;
-    margin: 0 auto;
-    padding: 0 $spacing-unit;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  padding: $spacing-unit/2 0;
+  margin-bottom: $spacing-unit;
 }
 
 .site-title {
   font-size: 26px;
-  font-weight: 300;
-  line-height: 54px;
-  letter-spacing: -1px;
-  margin-bottom: 0;
-  color: $grey-color-dark;
+  font-weight: 600;
+  color: $text-color;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .site-nav {
   .page-link {
     color: $text-color;
-    line-height: $base-line-height;
     margin-left: 20px;
+    text-decoration: none;
     
     &:hover {
-      color: color.adjust($text-color, $lightness: 20%);
+      text-decoration: underline;
     }
   }
 }
 
-// Main content
+// Page/Post content
 .page-content {
   padding: $spacing-unit 0;
-  
-  .wrapper {
-    max-width: $content-width;
-    margin: 0 auto;
-    padding: 0 $spacing-unit;
-  }
 }
 
-// Posts
-.post-list {
-  margin-left: 0;
-  list-style: none;
-  
-  > li {
-    margin-bottom: $spacing-unit;
-  }
+.page-header,
+.post-header {
+  margin-bottom: $spacing-unit;
+}
+
+.page-title,
+.post-title {
+  font-size: 42px;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: $spacing-unit/2;
 }
 
 .post-meta {
   font-size: 14px;
   color: $grey-color;
-}
-
-.post-link {
-  display: block;
-  font-size: 24px;
-}
-
-// Categories
-.category-posts {
-  .post-item {
-    margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit;
+  
+  .post-categories {
+    margin-left: 5px;
     
-    h2 {
-      margin-bottom: 5px;
+    a {
+      color: $grey-color;
+      
+      &:hover {
+        color: $brand-color;
+      }
     }
+  }
+}
+
+// Content styling
+.post-content,
+.page-content {
+  h2 {
+    font-size: 32px;
+    margin-top: $spacing-unit;
+    margin-bottom: $spacing-unit/2;
+  }
+  
+  h3 {
+    font-size: 26px;
+    margin-top: $spacing-unit;
+    margin-bottom: $spacing-unit/2;
+  }
+  
+  p {
+    margin-bottom: $spacing-unit/2;
   }
 }
 
@@ -122,10 +121,6 @@ a {
 .site-footer {
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
-  
-  .wrapper {
-    max-width: $content-width;
-    margin: 0 auto;
-    padding: 0 $spacing-unit;
-  }
+  margin-top: $spacing-unit;
+  color: $grey-color;
 }
