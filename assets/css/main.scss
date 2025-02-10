@@ -1,0 +1,23 @@
+/* assets/css/main.scss */
+---
+---
+
+@use "minima";
+
+// Your custom styles here
+.category-posts {
+  margin: 2em 0;
+  
+  .post-item {
+    margin-bottom: 2em;
+    
+    h2 {
+      margin-bottom: 0.5em;
+    }
+    
+    .post-meta {
+      color: #666;
+      font-size: 0.9em;
+    }
+  }
+}
